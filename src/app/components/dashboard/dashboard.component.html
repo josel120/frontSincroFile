@@ -1,0 +1,13 @@
+<p-table [value]="archivos"  >
+  <ng-template pTemplate="header">
+    <tr>
+        <th>Nombre</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-car>
+    <tr>
+        <td>{{car.nombre}}</td>
+        <td>{{car.vaina}}</td>
+    </tr>
+  </ng-template>
+</p-table> 
