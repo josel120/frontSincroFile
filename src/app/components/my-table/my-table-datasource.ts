@@ -100,9 +100,22 @@ export class MyTableDataSource extends DataSource<MyTableItem> {
       }
     });
   }
+  getFile(termino:string):MyTableItem[]{
+    let fileFiltered:MyTableItem[] = [];
+    //console.log("algo");
+    
+    for(let archivo of EXAMPLE_DATA){
+      let nombre = archivo.name.toLowerCase();
+      if(nombre.indexOf(termino) >= 0 ){
+        fileFiltered.push(archivo);
+      }
+    }
+    return fileFiltered;
+  }
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
 function compare(a, b, isAsc) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
+
